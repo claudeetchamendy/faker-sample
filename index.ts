@@ -1,13 +1,12 @@
-declare var require: any
-
 // Import stylesheets
-import './style.css';
+import "./style.css";
 
+declare var require: any;
 var fs = require("faker");
 
 interface Person {
   firstName: string;
-  lastName:  string;
+  lastName: string;
 }
 
 function greeter(person: Person) {
@@ -16,16 +15,23 @@ function greeter(person: Person) {
 
 // Doc = http://marak.github.io/faker.js/
 var user = {
-	firstName: fs.name.firstName(),
+  firstName: fs.name.firstName(),
   lastName: fs.name.lastName(),
-  email : fs.internet.email()
+  email: fs.internet.email()
 };
 
 // Write TypeScript code!
-const appDiv: HTMLElement = document.getElementById('app');
-appDiv.innerHTML = '<h1>' + greeter(user) + '</h1>';
-appDiv.innerHTML += '<ul>'
-appDiv.innerHTML += '    <li><span class="prop">Avatar : </span> <img src="' + fs.image.avatar() + '"/img></li>'
-appDiv.innerHTML += '    <li><span class="prop">Email : </span>' + user.email + '</li>'
-appDiv.innerHTML += '    <li><span class="prop">Country : </span>' + fs.address.country() + '</li>'
-appDiv.innerHTML += '</ul>'
+const appDiv: HTMLElement = document.getElementById("app");
+appDiv.innerHTML = "<h1>" + greeter(user) + "</h1>";
+appDiv.innerHTML += "<ul>";
+appDiv.innerHTML +=
+  '    <li><span class="prop">Avatar : </span> <img src="' +
+  fs.image.avatar() +
+  '"/img></li>';
+appDiv.innerHTML +=
+  '    <li><span class="prop">Email : </span>' + user.email + "</li>";
+appDiv.innerHTML +=
+  '    <li><span class="prop">Country : </span>' +
+  fs.address.country() +
+  "</li>";
+appDiv.innerHTML += "</ul>";
